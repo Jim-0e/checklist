@@ -65,7 +65,15 @@ html{
 .circle_prgss{
     transform: rotate(-90deg);
 }
+:root{
+    --progress: 50;
+    --r: 29.5;
+    --pi: 3.14;
+}
 
-.prss {
+.prgss {
+    r: var(--r);
     stroke-linecap: round;
+    stroke-dasharray: calc(2 * var(--pi) * var(--r));
+    stroke-dashoffset: calc( (2 * var(--pi) * var(--r)) * (100 - var(--progress)) / 100);
 }
